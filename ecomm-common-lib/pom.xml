@@ -45,12 +45,11 @@
         <maven.compiler.target>17</maven.compiler.target>
    </properties>
 
-   <distributionManagement>
+    <distributionManagement>
         <repository>
             <id>github</id>
             <name>Ecommerce POC Common Libraries</name>
             <url>https://maven.pkg.github.com/vimal-prabhakaran/ecomm-common-lib</url>
         </repository>
-    </distributionManagement>      
-
+    </distributionManagement>
 </project>
