@@ -15,12 +15,12 @@ import lombok.NoArgsConstructor;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class ProductOnboardRequestDTO {
 
-    private Integer productId;
-    private Integer offerId;
+    private String productId;
+    private String offerId;
     private String productName;
     private String productDescription;
     private Integer availableInventory;
     private Double price;
-    private Integer sellerId;
+    private String sellerId;
 
 }

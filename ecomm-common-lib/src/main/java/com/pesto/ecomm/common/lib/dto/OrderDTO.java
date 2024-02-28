@@ -18,11 +18,11 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class OrderDTO {
 
-    private Integer orderId;
-    private Integer productId;
+    private String orderId;
+    private String productId;
     private String buyerName;
     private OrderStatus orderStatus;
-    private Integer buyerId;
+    private String buyerId;
     private Double totalPrice;
     private List<OrderItemDTO> orderItems;
 

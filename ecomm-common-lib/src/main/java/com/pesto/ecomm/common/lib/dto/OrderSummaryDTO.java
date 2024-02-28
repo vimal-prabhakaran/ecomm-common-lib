@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class OrderSummaryDTO {
 
-    private Integer orderId;
+    private String orderId;
     private OrderStatus orderStatus;
     private Double totalPrice;
 

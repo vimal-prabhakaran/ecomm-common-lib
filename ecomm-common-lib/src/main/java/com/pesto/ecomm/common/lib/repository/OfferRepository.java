@@ -9,12 +9,12 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface OfferRepository extends JpaRepository<Offer, Integer> {
+public interface OfferRepository extends JpaRepository<Offer, String> {
 
-    Page<Offer> findBySeller_UserIdEqualsOrderByProduct(Integer sellerId, Pageable pageable);
+    Page<Offer> findBySeller_UserIdEqualsOrderByProduct(String sellerId, Pageable pageable);
 
-    List<Offer> findByProduct_ProductId(Integer productId);
+    List<Offer> findByProduct_ProductId(String productId);
 
-    Offer findBySeller_UserIdAndProduct_ProductId(Integer sellerId, Integer productId);
+    Offer findBySeller_UserIdAndProduct_ProductId(String sellerId, String productId);
 
 }

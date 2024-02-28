@@ -17,8 +17,8 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class OrderCancellationRequestDTO {
 
-    private Integer orderId;
+    private String orderId;
     private Boolean cancelAll;
-    private List<Integer> orderItemIds;
+    private List<String> orderItemIds;
 
 }

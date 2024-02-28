@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class OrderStatusUpdateRequestDTO {
 
-    private Integer orderItemId;
+    private String orderItemId;
     private OrderStatus status;
 
 }

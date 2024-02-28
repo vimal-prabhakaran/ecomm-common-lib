@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface OrderRepository extends JpaRepository<Order, Integer> {
+public interface OrderRepository extends JpaRepository<Order, String> {
 
-    Page<Order> findByBuyer_UserId(Integer buyerId, Pageable pageable);
+    Page<Order> findByBuyer_UserId(String buyerId, Pageable pageable);
 
 }

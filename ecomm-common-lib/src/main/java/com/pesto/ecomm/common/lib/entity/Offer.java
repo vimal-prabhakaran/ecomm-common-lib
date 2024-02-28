@@ -14,6 +14,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.codehaus.jackson.annotate.JsonIgnore;
+import org.springframework.data.annotation.Version;
+
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -24,9 +27,8 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 public class Offer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "offer_id")
-    private Integer offerId;
+    @Column(name = "offer_id", columnDefinition = "uniqueidentifier")
+    private volatile String offerId = String.valueOf(UUID.randomUUID());
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JsonIgnore
@@ -43,5 +45,9 @@ public class Offer {
 
     @Column(name = "quantity_available")
     private Integer quantityAvailable;
+
+    @Column(name = "entity_version")
+    @Version
+    private Long entityVersion;
 
 }

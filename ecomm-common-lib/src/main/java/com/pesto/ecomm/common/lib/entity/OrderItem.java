@@ -19,18 +19,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Getter
 @Setter
-@Table(name = "orders")
+@Table(name = "order_item")
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class OrderItem {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "order_item_id")
-    private Integer orderItemId;
+    @Column(name = "order_item_id", columnDefinition = "uniqueidentifier")
+    private volatile String orderItemId = String.valueOf(UUID.randomUUID());
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore

@@ -15,6 +15,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @Table(name = "user")
@@ -24,9 +26,8 @@ import lombok.Setter;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private Integer userId;
+    @Column(name = "user_id", columnDefinition = "uniqueidentifier")
+    private volatile String userId = String.valueOf(UUID.randomUUID());
 
     @Column(name = "user_name")
     private String userName;

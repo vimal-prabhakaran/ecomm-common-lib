@@ -13,8 +13,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.Version;
 
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -25,15 +27,18 @@ import java.util.List;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "product_id")
-    private Integer productId;
+    @Column(name = "product_id", columnDefinition = "uniqueidentifier")
+    private volatile String productId = String.valueOf(UUID.randomUUID());
 
     @Column(name = "name")
     private String name;
 
     @Column(name = "description")
     private String description;
+
+    @Column(name = "entity_version")
+    @Version
+    private Long entityVersion;
 
     @OneToMany(mappedBy = "product", cascade = {CascadeType.DETACH, CascadeType.MERGE,  CascadeType.PERSIST}, fetch = FetchType.EAGER)
     private List<Offer> offers;

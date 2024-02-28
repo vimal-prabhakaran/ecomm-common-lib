@@ -7,9 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface OrderItemRepository  extends JpaRepository<OrderItem, Integer> {
+public interface OrderItemRepository  extends JpaRepository<OrderItem, String> {
 
-    Page<OrderItem> findAllBySeller_UserId(Integer sellerId, Pageable pageable);
+    Page<OrderItem> findAllBySeller_UserId(String sellerId, Pageable pageable);
 
 
 }

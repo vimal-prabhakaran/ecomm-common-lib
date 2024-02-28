@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class ProductDTO {
 
-    private Integer productId;
+    private String productId;
     private String productName;
     private String description;
 

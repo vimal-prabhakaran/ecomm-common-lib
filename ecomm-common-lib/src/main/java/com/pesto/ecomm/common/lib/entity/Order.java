@@ -23,6 +23,7 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -33,9 +34,8 @@ import java.util.List;
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id", columnDefinition = "uniqueidentifier")
-    private Integer orderId;
+    private volatile String orderId = String.valueOf(UUID.randomUUID());
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore

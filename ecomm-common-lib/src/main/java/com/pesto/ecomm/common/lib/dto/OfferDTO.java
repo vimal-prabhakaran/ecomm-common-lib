@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class OfferDTO {
 
-    private Integer offerId;
+    private String offerId;
     private Double price;
     private Integer availableInventory;
 
