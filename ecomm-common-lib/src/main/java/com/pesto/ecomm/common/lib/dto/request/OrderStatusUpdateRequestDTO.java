@@ -17,6 +17,6 @@ import lombok.NoArgsConstructor;
 public class OrderStatusUpdateRequestDTO {
 
     private String orderItemId;
-    private OrderStatus status;
+    private String status;
 
 }
