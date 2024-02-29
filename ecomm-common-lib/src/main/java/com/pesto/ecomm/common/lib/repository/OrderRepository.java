@@ -13,4 +13,6 @@ public interface OrderRepository extends JpaRepository<Order, String> {
 
     Page<Order> findByBuyer_UserId(String buyerId, Pageable pageable);
 
+    Order findByOrderIdAndBuyer_UserId(String orderId, String userId);
+
 }
